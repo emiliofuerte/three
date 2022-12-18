@@ -1,0 +1,49 @@
+{% extends "app/base.html" %}
+{% block content %}
+<div class="container">
+<br>
+
+<h4 class="text-center"> three sentence book reviews</h4>
+
+<br>
+<br>
+
+<h1 class="text-center">now with a search bar!</h1>
+<br>
+<form action={% url 'home' %} method='get' class='text-center'>
+    <input name='q' type='text' placeholder='Search...'>
+</form>
+
+<br>
+<br>
+<br>
+
+<!-- show three reviews each row -->
+{% for review in reviews %}
+  {% if forloop.counter|add:"-1"|divisibleby:3 %}
+    <div class="row">
+  {% endif %}
+        <div class="col-sm-4">
+            <img src="../../static/media/cover-images/{{review.book.cover_image}}" alt={{review.book.cover_image}} class="rounded mx-auto d-block" style="max-width:60%;height:auto;">
+            <br>
+
+            <p>{{review.text}}</p>
+        </div>
+  {% if forloop.counter|divisibleby:3 %}
+    </div>
+    <br>
+    {% endif %}
+{% endfor %}
+
+<br>
+<br>
+<br>
+<br>
+
+<p class="text-center"><i>This website was built and is maintained by Emilio Fuerte, a man of passion.</i></p>
+
+<br>
+<br>
+
+</div>
+{% endblock content %}
