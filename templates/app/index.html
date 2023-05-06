@@ -3,15 +3,12 @@
 <div class="container">
 <br>
 
-<h4 class="text-center"> three sentence book reviews</h4>
-
-<br>
+<h4 class="text-center"> three sentence book reviews </h4>
 <br>
 
-<h1 class="text-center">now with a search bar!</h1>
-<br>
+
 <form action={% url 'home' %} method='get' class='text-center'>
-    <input name='q' type='text' placeholder='Search...'>
+    <input name='q' type='text' placeholder='search...'>
 </form>
 
 <br>
@@ -34,13 +31,6 @@
     <br>
     {% endif %}
 {% endfor %}
-
-<br>
-<br>
-<br>
-<br>
-
-<p class="text-center"><i>This website was built and is maintained by Emilio Fuerte, a man of passion.</i></p>
 
 <br>
 <br>
